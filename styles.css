@@ -1,0 +1,778 @@
+/* =========================================
+   Base & Elite Fintech Design Tokens
+   ========================================= */
+:root {
+    /* Colors */
+    --bg-primary: #020202; /* Deep Obsidian */
+    --bg-secondary: #080808;
+    --bg-glass: rgba(255, 255, 255, 0.015);
+    
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --text-muted: #444444;
+    
+    --accent-1: #ffffff; /* Stark White */
+    --accent-2: #2E5CFF; /* Electric Fintech Blue */
+    --accent-3: #00E59B; /* Secure Mint */
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #FFFFFF 0%, #A0A0A0 100%); /* Platinum/Silver */
+    --gradient-fintech: linear-gradient(135deg, #2E5CFF 0%, #00D4FF 100%);
+    --gradient-glow: radial-gradient(circle, rgba(46, 92, 255, 0.08) 0%, transparent 60%);
+    
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --section-pad: 120px;
+    --container-width: 1200px;
+    
+    /* Border Radius - Sharper for "Elite" feel */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease-out;
+    --transition-slow: 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Custom cursor */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   Custom Cursor & Loader
+   ========================================= */
+#custom-cursor {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+    mix-blend-mode: difference;
+}
+
+#custom-cursor.hover {
+    width: 60px;
+    height: 60px;
+    background-color: #ffffff;
+    border: none;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.loader-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.loader-dot {
+    animation: blink 1.5s infinite;
+    opacity: 0.2;
+}
+.loader-dot:nth-child(2) { animation-delay: 0.5s; }
+.loader-dot:nth-child(3) { animation-delay: 1s; }
+
+@keyframes blink {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; color: #fff;}
+}
+
+/* =========================================
+   Typography & Utilities
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.04em; /* Premium tight tracking */
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section-padding {
+    padding: var(--section-pad) 0;
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.sub-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.sub-heading::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-2);
+    border-radius: 50%;
+    margin-right: 12px;
+    transform: translateY(-1px);
+}
+
+.glass-card {
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-slow);
+}
+
+/* High-End Fintech Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border-radius: 40px; /* Pill shaped */
+    font-family: var(--font-heading);
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background: var(--accent-1);
+    color: #000000;
+    border: 1px solid var(--accent-1);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent-1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.05);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   Navigation
+   ========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 100;
+    transition: background-color var(--transition-fast), padding var(--transition-fast);
+    border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(2, 2, 2, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.nav-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 0.85rem;
+}
+
+.mobile-toggle {
+    display: none;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: radial-gradient(circle at top right, rgba(46,92,255,0.05) 0%, transparent 50%);
+}
+
+.glow-orb {
+    display: none; /* Removed for hyper-minimalist feel */
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin-bottom: 1.5rem;
+    font-weight: 400; /* Ultra clean */
+    letter-spacing: -0.05em;
+}
+
+.hero-title .text-gradient {
+    font-weight: 500;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 480px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.social-icon:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+/* Hero Image Wrapper */
+.image-wrapper {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    padding-bottom: 110%; /* More square/modern aspect */
+    background: var(--bg-secondary);
+}
+
+.portrait-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2); /* Stark B&W */
+    transform: scale(1.02);
+    transition: transform var(--transition-slow), filter var(--transition-slow);
+}
+
+.image-wrapper:hover .portrait-img {
+    transform: scale(1);
+    filter: grayscale(30%) contrast(1.1);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 20px;
+    left: -20px;
+    background: #000000;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.2rem 1.8rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.exp-number {
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.exp-text {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-indicator span {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   Metrics Section
+   ========================================= */
+.metrics {
+    border-top: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    background: var(--bg-primary); /* Blend seamlessly */
+}
+
+.metrics-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 5%;
+}
+
+.metric-item {
+    text-align: left; /* Alignment changes for sophisticated look */
+    border-left: 1px solid rgba(255,255,255,0.05);
+    padding-left: 2rem;
+}
+
+.metric-item:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.metric-number {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   Leadership Timeline
+   ========================================= */
+.section-header {
+    margin-bottom: 5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 23px;
+    height: 100%;
+    width: 1px; /* Thinner line */
+    background: rgba(255,255,255,0.1);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 4rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 20px;
+    top: 6px;
+    width: 7px; /* Elegant small dot */
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    z-index: 2;
+    transition: var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--accent-2); /* Fintech blue on over */
+    box-shadow: 0 0 10px var(--accent-2);
+}
+
+.timeline-content {
+    background: transparent;
+    border: none;
+    padding: 0;
+    transition: transform var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+}
+
+.timeline-year {
+    color: var(--text-secondary);
+    font-family: var(--font-body); /* Standard font, no more bubble font */
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.timeline-role {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Expertise Grid (Projects)
+   ========================================= */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.expertise-card {
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-sm); /* Sharper */
+    border: 1px solid rgba(255,255,255,0.06);
+    background: var(--bg-secondary);
+    transition: transform var(--transition-slow), background var(--transition-fast);
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    background: #0d0d0d;
+    border-color: rgba(255,255,255,0.12);
+}
+
+.card-icon {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.expertise-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.expertise-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.expertise-card p span {
+    color: var(--accent-2) !important; /* Force fintech blue for tags */
+}
+
+/* =========================================
+   Call to Action
+   ========================================= */
+.cta-card {
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius-sm);
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.cta-content p {
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 3rem 0;
+    background: #000000;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.footer-left p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social a {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+}
+
+.footer-social a:hover {
+    color: var(--text-primary);
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media screen and (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .experience-badge {
+        left: 20px;
+        bottom: 20px;
+        padding: 1rem;
+    }
+    
+    .metrics-container {
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 3rem 5%;
+    }
+    
+    .metric-item {
+        border-left: none;
+        padding-left: 0;
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --section-pad: 80px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .timeline::before {
+        left: 10px;
+    }
+    
+    .timeline-dot {
+        left: 7px;
+    }
+    
+    .timeline-item {
+        padding-left: 30px;
+    }
+    
+    .metric-item {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
