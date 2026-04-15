@@ -19,6 +19,11 @@
 </head>
 
 <body class="dark-theme">
+    <div class="animated-bg">
+        <div class="ambient-blob blob-1"></div>
+        <div class="ambient-blob blob-2"></div>
+        <div class="ambient-blob blob-3"></div>
+    </div>
     <div id="custom-cursor"></div>
     <div class="loader">
         <div class="loader-text">INITIALIZING <span class="loader-dot">.</span><span class="loader-dot">.</span><span
@@ -33,6 +38,7 @@
                 <a href="#home" class="nav-link">Vision</a>
                 <a href="#journey" class="nav-link">Journey</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="btn btn-outline nav-btn">Let's Talk</a>
             </div>
             <div class="mobile-toggle">
@@ -49,11 +55,9 @@
         </div>
         <div class="container hero-container">
             <div class="hero-content" data-scroll>
-                <div class="sub-heading">Young Founder & Tech Entrepreneur</div>
-                <h1 class="hero-title">Building the Future <br>of <span class="text-gradient">Tech & Fintech</span>.
-                </h1>
-                <p class="hero-desc">I am Mohammed Momeen, a young tech entrepreneur and the founder of ThrivvTech IT
-                    Solutions, VEXEX Fintech, and ARM2 Parfums. Focused on visionary products and real-world impact.</p>
+                <div class="sub-heading">Visionary Tech Entrepreneur</div>
+                <h1 class="hero-title">Founder building <br><span class="text-gradient">next-gen fintech</span> systems.</h1>
+                <p class="hero-desc">I am Mohammed Momeen, a startup founder and builder focused on engineering scalable, high-end financial technologies and premium products that change how we interact with money.</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn btn-primary">Explore My Work</a>
                     <div class="social-links">
@@ -78,6 +82,16 @@
             <span>Scroll</span>
             <div class="mouse">
                 <div class="wheel"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Founder Statement Section -->
+    <section class="founder-statement section-padding">
+        <div class="container">
+            <div class="founder-card glass-card" data-scroll>
+                <h2>"I don’t just build apps — I build systems that <span class="text-gradient">redefine</span> how people interact with technology."</h2>
             </div>
         </div>
     </section>
@@ -115,32 +129,35 @@
             <div class="timeline">
                 <div class="timeline-item" data-scroll>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
+                    <a href="vexex.html" class="timeline-content glass-card block-link">
                         <div class="timeline-year">2026 - Present</div>
                         <h3 class="timeline-role">Founder @ VEXEX Fintech</h3>
                         <p>Established a forward-thinking fintech company aimed at revolutionizing digital payments and
                             financial accessibility globally.</p>
-                    </div>
+                        <div class="explore-btn mt-4"><span class="btn btn-outline btn-sm">Read the Story <i class="fas fa-arrow-right ml-2"></i></span></div>
+                    </a>
                 </div>
 
                 <div class="timeline-item" data-scroll>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
+                    <a href="arm2.html" class="timeline-content glass-card block-link">
                         <div class="timeline-year">Parallel Venture</div>
                         <h3 class="timeline-role">Founder @ ARM2 Parfums</h3>
                         <p>Expanding entrepreneurial reach beyond technology by building a premium fragrance brand,
                             managing product development, and scaling operations.</p>
-                    </div>
+                        <div class="explore-btn mt-4"><span class="btn btn-outline btn-sm">Read the Story <i class="fas fa-arrow-right ml-2"></i></span></div>
+                    </a>
                 </div>
 
                 <div class="timeline-item" data-scroll>
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
+                    <a href="thrivvtech.html" class="timeline-content glass-card block-link">
                         <div class="timeline-year">2025 - 2026</div>
                         <h3 class="timeline-role">Founder @ ThrivvTech IT Solutions</h3>
                         <p>Launched an IT services company dedicated to building robust digital solutions. Successfully
                             partnered with 10+ clients to deliver scalable applications and systems.</p>
-                    </div>
+                        <div class="explore-btn mt-4"><span class="btn btn-outline btn-sm">Read the Story <i class="fas fa-arrow-right ml-2"></i></span></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -155,29 +172,88 @@
             </div>
 
             <div class="expertise-grid">
-                <div class="expertise-card glass-card" data-scroll>
-                    <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                <div class="expertise-card featured-project glass-card" data-scroll>
+                    <div class="card-header flex-between">
+                        <div class="card-icon"><i class="fas fa-fingerprint"></i></div>
+                        <span class="project-tag gradient-tag"><i class="fas fa-satellite-dish"></i> Live Demo Ready</span>
+                    </div>
                     <h3>Vein Pay</h3>
-                    <p><span
-                            style="color:var(--accent-3);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px;">Under
-                            Development</span>A seamless, secure, and user-centric digital wallet application designed
-                        to simplify personal finance and everyday transactions.</p>
+                    <p>A seamless, secure, and user-centric digital wallet application designed
+                        to simplify personal finance using cutting-edge biometric vein authentication.</p>
+                    <div class="card-actions mt-4">
+                        <a href="#" class="btn btn-outline btn-sm demo-btn">View Demo <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
                 </div>
                 <div class="expertise-card glass-card" data-scroll>
-                    <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                    <div class="card-header flex-between">
+                        <div class="card-icon"><i class="fas fa-chart-pie"></i></div>
+                        <span class="project-tag">Under Development</span>
+                    </div>
                     <h3>VEXEX 2.0</h3>
-                    <p><span
-                            style="color:var(--accent-3);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px;">Under
-                            Development</span>The next generation of our comprehensive fintech platform, built from the
+                    <p>The next generation of our comprehensive fintech platform, built from the
                         ground up to support scalable, high-volume financial tools.</p>
                 </div>
                 <div class="expertise-card glass-card" data-scroll>
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>ThrivvTech Client Solutions</h3>
-                    <p><span
-                            style="color:var(--accent-3);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px;">Active
-                            Agency</span>Delivering custom web applications, automation systems, and IT infrastructure
+                    <div class="card-header flex-between">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <span class="project-tag">Active Agency</span>
+                    </div>
+                    <h3>ThrivvTech Solutions</h3>
+                    <p>Delivering custom web applications, automation systems, and IT infrastructure
                         for an expanding portfolio of 10+ clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <div class="section-header text-center" data-scroll>
+                <span class="sub-heading">Professional Arsenal</span>
+                <h2 class="section-title">Core <span class="text-gradient">Skills</span></h2>
+            </div>
+
+            <div class="expertise-grid skills-grid">
+                <div class="expertise-card glass-card" data-scroll>
+                    <div class="card-icon"><i class="fas fa-chess-knight"></i></div>
+                    <h3>Leadership & Strategy</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Vision building</li>
+                        <li><i class="fas fa-check"></i> Startup execution</li>
+                        <li><i class="fas fa-check"></i> Product strategy</li>
+                        <li><i class="fas fa-check"></i> Decision making</li>
+                    </ul>
+                </div>
+                <div class="expertise-card glass-card" data-scroll>
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Full Stack Dev</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> React & React Native</li>
+                        <li><i class="fas fa-check"></i> Node.js & Express</li>
+                        <li><i class="fas fa-check"></i> MongoDB</li>
+                        <li><i class="fas fa-check"></i> Next-gen UI/UX</li>
+                    </ul>
+                </div>
+                <div class="expertise-card glass-card" data-scroll>
+                    <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Fintech Systems</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Wallet architecture</li>
+                        <li><i class="fas fa-check"></i> Transaction systems</li>
+                        <li><i class="fas fa-check"></i> Payment flows</li>
+                        <li><i class="fas fa-check"></i> Biometric auth</li>
+                    </ul>
+                </div>
+                <div class="expertise-card glass-card" data-scroll>
+                    <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Authentication systems</li>
+                        <li><i class="fas fa-check"></i> Data protection</li>
+                        <li><i class="fas fa-check"></i> Ethical hacking basics</li>
+                        <li><i class="fas fa-check"></i> Secure architectures</li>
+                    </ul>
                 </div>
             </div>
         </div>

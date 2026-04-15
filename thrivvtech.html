@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThrivvTech Solutions - Digital Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .company-hero { padding-top: 150px; text-align: center; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="animated-bg">
+        <div class="ambient-blob blob-1" style="background: rgba(46, 92, 255, 0.1);"></div>
+        <div class="ambient-blob blob-2" style="background: rgba(138, 43, 226, 0.08);"></div>
+        <div class="ambient-blob blob-3"></div>
+    </div>
+    <div id="custom-cursor"></div>
+    <div class="loader"><div class="loader-text">THRIVVTECH INITIALIZING <span class="loader-dot">.</span><span class="loader-dot">.</span><span class="loader-dot">.</span></div></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display:flex; align-items:center; gap: 10px;"><i class="fas fa-arrow-left"></i> BACK TO ORIGIN</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="company-hero section-padding">
+        <div class="container" data-scroll>
+            <div class="sub-heading">ThrivvTech IT Solutions</div>
+            <h1 class="hero-title">Architecting <br><span class="text-gradient">Digital Futures</span>.</h1>
+            <p class="hero-desc mx-auto" style="margin: 0 auto;">Transforming complex business challenges into elegant, highly scalable digital structures.</p>
+        </div>
+    </section>
+
+    <!-- Core Story -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-scroll>
+                <h2 class="section-title">What We <span class="text-gradient">Build</span></h2>
+            </div>
+            <div class="grid-3">
+                <div class="glass-card" style="padding: 2.5rem;" data-scroll>
+                    <div class="card-icon"><i class="fas fa-server"></i></div>
+                    <h3>Backend Architecture</h3>
+                    <p>We deploy robust, secure, and load-balancing backend systems leveraging Node.js and MongoDB to handle enterprise-level traffic without a single point of failure.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem;" data-scroll>
+                    <div class="card-icon"><i class="fas fa-mobile-screen"></i></div>
+                    <h3>App Ecosystems</h3>
+                    <p>End-to-end frontend development using React and React Native to deliver 60fps native application experiences across web, iOS, and Android simultaneously.</p>
+                </div>
+                <div class="glass-card" style="padding: 2.5rem;" data-scroll>
+                    <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Cybersecurity Integrations</h3>
+                    <p>Security isn't an afterthought. We implement military-grade encryption and secure authentication architectures from day zero of the development cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Growth -->
+    <section class="section-padding" style="background: rgba(0,0,0,0.5);">
+        <div class="container text-center">
+            <div class="founder-card glass-card" style="max-width: 1000px;" data-scroll>
+               <h3 style="margin-bottom: 2rem; font-size: 2rem;">Growth & Traction</h3>
+               <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                   <div>
+                       <h2 style="font-size: 3.5rem; color: var(--accent-2);">10+</h2>
+                       <span style="color: var(--text-secondary); text-transform: uppercase;">Enterprise Clients</span>
+                   </div>
+                   <div>
+                       <h2 style="font-size: 3.5rem; color: var(--accent-3);">100%</h2>
+                       <span style="color: var(--text-secondary); text-transform: uppercase;">Delivery Rate</span>
+                   </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">THRIVVTECH IT SOLUTIONS</span>
+                <p>&copy; 2026 ThrivvTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

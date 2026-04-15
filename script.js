@@ -2,8 +2,13 @@
 const cursor = document.getElementById('custom-cursor');
 
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    // Smoother magnetic cursor via GSAP
+    gsap.to(cursor, {
+        left: e.clientX,
+        top: e.clientY,
+        duration: 0.15,
+        ease: "power2.out"
+    });
 });
 
 const hoverables = document.querySelectorAll('a, button, .timeline-item, .expertise-card');
@@ -82,20 +87,55 @@ function initAnimations() {
         ease: "back.out(1.7)"
     }, "-=0.4");
 
-    // Scroll Elements Animation
-    const scrollElements = document.querySelectorAll('[data-scroll]');
+    // Staggered Grids Animation (Projects, Skills, Metrics, Timeline)
+    const grids = document.querySelectorAll('.expertise-grid, .timeline');
     
-    scrollElements.forEach((el) => {
-        gsap.from(el, {
+    grids.forEach(grid => {
+        const children = grid.children;
+        gsap.from(children, {
             scrollTrigger: {
-                trigger: el,
+                trigger: grid,
                 start: "top 85%",
                 toggleActions: "play none none reverse"
             },
-            y: 50,
+            y: 60,
             opacity: 0,
             duration: 0.8,
+            stagger: 0.2, // Staggered reveal
             ease: "power3.out"
+        });
+    });
+
+    // 3D Tilt Effect for Glass Cards
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Subtle 3D tilt effect
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+            
+            gsap.to(card, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                transformPerspective: 1000,
+                ease: "power1.out",
+                duration: 0.3
+            });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotationX: 0,
+                rotationY: 0,
+                ease: "power3.out",
+                duration: 0.6
+            });
         });
     });
 

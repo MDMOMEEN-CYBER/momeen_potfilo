@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARM2 Parfums - Premium Fragrance Brand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .company-hero { padding-top: 150px; text-align: center; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
+        .flow-step { text-align: center; padding: 2rem; }
+        .flow-step i { font-size: 2.5rem; color: #ffcc00; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="animated-bg">
+        <div class="ambient-blob blob-1" style="background: rgba(255, 204, 0, 0.08);"></div>
+        <div class="ambient-blob blob-2" style="background: rgba(255, 100, 50, 0.05);"></div>
+        <div class="ambient-blob blob-3"></div>
+    </div>
+    <div id="custom-cursor"></div>
+    <div class="loader"><div class="loader-text">INITIALIZING ARM2 <span class="loader-dot">.</span><span class="loader-dot">.</span><span class="loader-dot">.</span></div></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display:flex; align-items:center; gap: 10px;"><i class="fas fa-arrow-left"></i> BACK TO ORIGIN</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="company-hero section-padding">
+        <div class="container" data-scroll>
+            <div class="sub-heading" style="color: #ffcc00;">Parallel Venture</div>
+            <h1 class="hero-title">The Essence of <br><span class="text-gradient">Luxury & Perfection</span>.</h1>
+            <p class="hero-desc mx-auto" style="margin: 0 auto;">Beyond code and systems, capturing elegance through premium signature scents.</p>
+        </div>
+    </section>
+
+    <!-- Core Story -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <div class="glass-card" style="padding: 3rem;" data-scroll>
+                    <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>The Vision</h3>
+                    <p>ARM2 Parfums was founded to translate the pursuit of perfection in tech into the physical realm. Creating a scent is like creating a system: every note must be perfectly balanced to deliver an unforgettable user experience.</p>
+                </div>
+                <div class="glass-card" style="padding: 3rem;" data-scroll>
+                    <div class="card-icon"><i class="fas fa-bottle-droplet"></i></div>
+                    <h3>The Product</h3>
+                    <p>We source the finest ingredients globally, employing meticulous distillation processes to create long-lasting, memorable fragrances tailored for the modern leader and visionary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section class="company-hero section-padding">
+        <div class="container">
+            <div class="founder-card glass-card" data-scroll>
+                <h2>"Design isn't just how a digital app looks — it's how a physical product <span class="text-gradient">makes you feel</span>. ARM2 embodies presence."</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="footer-logo">ARM2 PARFUMS</span>
+                <p>&copy; 2026 ARM2 Parfums. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

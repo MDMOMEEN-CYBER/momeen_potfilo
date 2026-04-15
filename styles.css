@@ -546,14 +546,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timeline-content {
-    background: transparent;
-    border: none;
-    padding: 0;
-    transition: transform var(--transition-fast);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform var(--transition-slow), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .timeline-item:hover .timeline-content {
-    transform: translateX(5px);
+    transform: translateX(10px);
+    background: #080808;
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(46, 92, 255, 0.05);
 }
 
 .timeline-year {
@@ -596,13 +600,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-sm); /* Sharper */
     border: 1px solid rgba(255,255,255,0.06);
     background: var(--bg-secondary);
-    transition: transform var(--transition-slow), background var(--transition-fast);
+    transition: transform var(--transition-slow), background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    position: relative;
+    overflow: hidden;
 }
 
 .expertise-card:hover {
-    transform: translateY(-5px);
-    background: #0d0d0d;
-    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-8px);
+    background: #080808;
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(46, 92, 255, 0.08); /* Glow effect */
 }
 
 .card-icon {
@@ -776,3 +783,179 @@ footer {
         text-align: center;
     }
 }
+
+/* =========================================
+   Founder Statement
+   ========================================= */
+.founder-statement {
+    text-align: center;
+}
+
+.founder-card {
+    padding: 5rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 40px rgba(255,255,255,0.01);
+    transition: var(--transition-slow);
+}
+
+.founder-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 50px rgba(255,255,255,0.02), 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.founder-card h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+/* =========================================
+   Project Cards Enhancements
+   ========================================= */
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.flex-between .card-icon {
+    margin-bottom: 0;
+}
+
+.featured-project::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gradient-fintech);
+}
+
+.featured-project:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(46, 92, 255, 0.15);
+}
+
+.project-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.gradient-tag {
+    background: rgba(46, 92, 255, 0.15);
+    color: #4C82FF;
+    border: 1px solid rgba(46, 92, 255, 0.3);
+}
+
+.gradient-tag i {
+    margin-right: 4px;
+    animation: blink 2s infinite;
+}
+
+.mt-4 { margin-top: 1.5rem; }
+.ml-2 { margin-left: 0.5rem; }
+
+.btn-sm {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   Skills Section
+   ========================================= */
+.skill-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.skill-list li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+}
+
+.skill-list li i {
+    color: var(--accent-3);
+    font-size: 0.75rem;
+    margin-right: 12px;
+    opacity: 0.8;
+}
+
+/* =========================================
+   Animated Ambient Background
+   ========================================= */
+.animated-bg {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    background: var(--bg-primary);
+    pointer-events: none;
+}
+
+.ambient-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: float 20s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    width: 600px; height: 600px;
+    background: rgba(46, 92, 255, 0.15); /* Fintech Blue */
+    top: -200px; left: -200px;
+}
+
+.blob-2 {
+    width: 500px; height: 500px;
+    background: rgba(0, 229, 155, 0.08); /* Mint */
+    bottom: -100px; right: -100px;
+    animation-delay: -5s;
+    animation-duration: 25s;
+}
+
+.blob-3 {
+    width: 400px; height: 400px;
+    background: rgba(255, 255, 255, 0.05); /* White glow */
+    top: 40%; left: 60%;
+    animation-delay: -10s;
+    animation-duration: 18s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* =========================================
+   Block Link Formatting
+   ========================================= */
+a.block-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: none;
+}
+
+a.block-link:focus, a.block-link:active {
+    outline: none;
+}
+
